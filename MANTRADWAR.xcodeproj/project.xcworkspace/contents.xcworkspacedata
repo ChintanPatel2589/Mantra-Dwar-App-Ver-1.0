@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Mantra Dwar App.xcodeproj">
+      location = "self:MANTRADWAR.xcodeproj">
    </FileRef>
 </Workspace>

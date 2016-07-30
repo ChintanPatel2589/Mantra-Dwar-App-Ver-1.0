@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  Mantra Dwar App
+//
+//  Created by Jitesh Kapadia on 2/19/15.
+//  Copyright (c) 2015 August. All rights reserved.
+//
+
+#//ifndef Mantra_Dwar_App_PrefixHeader_pch
+#define Mantra_Dwar_App_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//#endif
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#endif
+#define urlMantraList @"http://webdesignvadodara.com/welcome/mantra_json/mantra"
+#define urlAlbumList @"http://webdesignvadodara.com/welcome/mantra_json/album"
+#define urlAlbumImage @"http://webdesignvadodara.com/welcome/mantra_json/gallery/"

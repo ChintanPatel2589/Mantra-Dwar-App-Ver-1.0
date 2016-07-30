@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
+#import "DownloadMantraViewController.h"
+@interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITabBarDelegate>
+@property(nonatomic,retain)NSMutableArray *arrayData;
+@property(nonatomic,retain)IBOutlet UITableView *tblView;
+@property(nonatomic,retain)IBOutlet UISwitch *switchMantra;
+@property(nonatomic,retain)IBOutlet UITabBar *tabBar;
 
 @end
 

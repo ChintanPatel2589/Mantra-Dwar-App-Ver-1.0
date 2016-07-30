@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,7 +17,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    return YES;
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    ViewController *viewController =
+    [[UIStoryboard storyboardWithName:@"Main"
+                               bundle:NULL] instantiateViewControllerWithIdentifier:@"ViewController"];
+    UINavigationController *rootNavigation = [[UINavigationController alloc]initWithRootViewController:viewController];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else
+    {
+        [[UIApplication sharedApplication]registerForRemoteNotificationTypes:
+         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+    }
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+
+    self.window.rootViewController = rootNavigation;
+     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -40,6 +62,33 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+#pragma mark Local Notification handle Methods
+- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notif
+{
+    //[[UIApplication sharedApplication]cancelAllLocalNotifications];
+    app.applicationIconBadgeNumber = 0;
+    notif.soundName = UILocalNotificationDefaultSoundName;
+    [self openAppWithPlaySong];
+    
+}
+-(void)openAppWithPlaySong
+{
+    PlayMantraViewController *viewController = [[UIStoryboard storyboardWithName:@"Main"
+                                                                          bundle:NULL] instantiateViewControllerWithIdentifier:@"PlayMantraViewController"];
+    viewController.selectedMantra = [[NSUserDefaults standardUserDefaults]valueForKey:@"selectedMantra"];
+    viewController.isFromNotification = true;
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:viewController];
+    [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+}
+#pragma mark Alert Methods
+-(void)alert:(NSString *)title msg :(NSString *)msg alertTag:(int)tag cancelTitile:(NSString *)cancelTitle okTitle:(NSString *)okTitle
+{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:msg delegate:self cancelButtonTitle:cancelTitle otherButtonTitles:okTitle, nil];
+    alert.delegate = self;
+    alert.tag = tag;
+    [alert show];
+    alert = nil;
 }
 
 @end
