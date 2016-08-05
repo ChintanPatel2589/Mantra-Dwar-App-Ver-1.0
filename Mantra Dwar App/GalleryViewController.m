@@ -42,7 +42,7 @@
     @try {
         if ([self connected])
         {
-            NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[[NSString stringWithFormat:@"%@%@",urlAlbumImage,@"0"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+            NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[[NSString stringWithFormat:@"%@%@",urlAlbumImage,self.albumID] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
             // NSLog(@"%@", request.URL);
             [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *err){
                 if (err) {
@@ -196,7 +196,7 @@
             }
         }
         
-        if (appRecord2) {
+        if (appRecord2.count > 0) {
             if (![appRecord2 objectForKey:@"Icon1014"])
             {
                 if (self.tblView.dragging == NO && self.tblView.decelerating == NO)

@@ -25,6 +25,10 @@
 #import <Foundation/Foundation.h>
 
 #endif
-#define urlMantraList @"http://webdesignvadodara.com/welcome/mantra_json/mantra"
-#define urlAlbumList @"http://webdesignvadodara.com/welcome/mantra_json/album"
-#define urlAlbumImage @"http://webdesignvadodara.com/welcome/mantra_json/gallery/"
+#define urlMantraList @"http://webdesignvadodara.com/admin/welcome/mantra_json/mantra"
+#define urlAlbumList @"http://webdesignvadodara.com/admin/welcome/mantra_json/album"
+#define urlAlbumImage @"http://webdesignvadodara.com/admin/welcome/mantra_json/gallery/"
+
+
+
+
