@@ -383,7 +383,7 @@
 				TargetAttributes = {
 					ECC31BD01A94623B0076277E = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = ZSEQU3SBA9;
+						DevelopmentTeam = 24E95Z9BAZ;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -616,15 +616,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ashish Joshi (24E95Z9BAZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ashish Joshi (24E95Z9BAZ)";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = "Mantra Dwar App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gracenbless.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gracenbless.mantradwar1;
 				PRODUCT_NAME = MANTRADWAR;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f455d451-0be7-4a07-a3c8-624ce189ef4a";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -634,15 +635,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ashish Joshi (24E95Z9BAZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ashish Joshi (24E95Z9BAZ)";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = "Mantra Dwar App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gracenbless.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gracenbless.mantradwar1;
 				PRODUCT_NAME = MANTRADWAR;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f455d451-0be7-4a07-a3c8-624ce189ef4a";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
